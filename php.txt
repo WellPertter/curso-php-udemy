@@ -1,0 +1,743 @@
+projectos complextos usando php
+html, css, php, javascript, fullstack
+
+php é uma línguagem backend, conexão, geração gráfica, XML, PDF.
+Script para executar, remotamente ou não, CRONs,
+
+-> Linguagem criada para deixar o HTML dinâmico 
+-> Script e Open Source
+-> Desenvolvimento web
+-> php Personal Home Page(P) e Hypertext Preprocessor(HP)
+
+História: Criador foi o Rasmus Lerdorf, em 1994, quase na versão 8, 80% dos sites contém php em 2020.
+
+Vscode: Tem extensões, terminal integrado é um dos mais famosos.
+
+XAMP
+
+<?php
+    echo 'Hello world!';
+?>
+
+
+index.php é o main
+
+localhost  127.0.0.1
+
+
+Sintaxe
+Tags do PHP, fora é texto
+
+<?php
+
+?> -> Se o Arquivo for .php não precisa fechar
+
+cada instrução ter no final ; 
+
+Pode usar " ou '
+
+() diz que é função
+
+
+
+PHP e suas dependências 
+
+phpinfo(); <- informar as dependêncais que tem no php atual
+
+
+Fazer os exercícios
+Modifcar eles para deixar pessoal
+Fazer anotações
+Assistir e executar
+
+Erro shorttag   <?= $nome ?>  ->  <?php echo $nome; ?>  ( correto)
+
+Conceitos Básicos
+
+
+Não é cases sensitivy para instruções echo == ECHO
+Cases sensitivy para variáveis $A <> $a
+
+
+linha ;
+bloco { aqui }
+
+espaço em branco e quebra de linha é ignorado
+
+
+    // Aqui é um comentário simples
+
+    /*
+Comentário compostos
+Ter cuidado com senhas aqui.
+*/
+
+#Comentário também
+
+    $cabelo = null;
+
+Palavras reservadas
+echo, insteadof, else, interface, namespace, pow, __DIR__, __FILE__, endif, print, private, protected, and, require, public, as, break, case, for,
+finally, switch, throw and etc;
+
+
+TIpo de dados
+Saber o que usar e quando usar
+integers - Inteiros, -1, 0, 1
+
+chegar se é inteiro is_int()  -> true ou false 
+outros: is_string(), is_bool(), is_float(), is_array(), is_numeric, is_null()
+
+floats -> -1.0 0.5 1.6
+
+strings -> "Texto" 'Texto'
+
+" " - interpretam varivaeis no texto ->     echo "DupMeu nome é $nome <br>"; !!!!!!!!!!!!!!!!!
+
+booleanos - true OR false
+
+falses -> 0, 0.0, "0", [], NULL;
+
+arrays aceita qualquer tipo de valor 
+
+print_r(array);
+array[index] 
+Começa do 0;
+
+
+array associative chave:valor
+array_a = ['nome' => valor, etc]
+
+objetos 
+Php possui o paradigma de orientação a objetos
+podendo criar classes e objetos e objetos é um tipo de dado.
+
+os objetos tem métodos e atributos
+    class Pessoa{
+
+        function falar() {
+            echo "Olá pessoal!";
+        }
+    }
+
+    $alec = new Pessoa();  
+    $alec->nome = "Alec";            atribui  atributos
+    echo $alec->nome;
+
+-> forma de acessar ->
+
+type
+NULL
+
+
+VARIÁVEIS
+
+$nome = "valor";
+- O tipo pode ser alterado a qualquer momento no Sistema
+
+ter um padrãona criação das variáveis.
+
+
+varivável de variável
+$x = 1;
+$$x = 2;
+
+cria a varivael 1 = 2;
+
+Variável por referência 
+
+$x = 2;
+$y =& $x; 
+
+
+Se mudar uma, muda a outra, usa-se o mesmo ponto da memória.
+
+
+ESCOPO
+
+local
+Global
+Static
+Parâmetros de Função
+
+
+variável global não pode ser acessadas na função diretamente, somente usando
+global para isso
+
+dentro de if posso alterar variáveis globais.
+
+
+ESTÁTICA
+        static $a = 0;  ( mantém o valor )para o escopo global
+
+PARÂMETROS DE FUNÇÕES basic
+
+
+EXRESSÕES E OPERAÇÕES
+
+Instrução de Código que será avaliado e resultará em um valor;
+
++, -, *, **, /, ++, --, >, <, >=, <= e etc;
+ordem de execução ( )- basic of math
+
+
+
+. -> Concatenação do PHP
+
+auto cast -> Muda de forma automática o tipo da variável
+
+ gettype("5" * 12)  -> Retornar o tipo, nesse caso, transformer em inteiro.
+
+
+ASPAS SIMPES É O MEU PADRÃOS
+
+% -> Módulo, divisão que retornar o resto ( é par ou é ímpa )
+
+
+AUTOINCREMENTO E AUTODECREMENTO
+-- E ++ ( menos 1 ou mais 1 )
+
+operadores de comparação
+
+= atribuição (!!!!)
+
+igualdade: ==
+idêntico a: ===               -Chega o tipo também
+diferença: !=
+não idêntico a: !==
+
+Maior e maior ou igual a: > e >=
+Menor e menor ou igual a: < e <=
+
+Idêntico compara o valor e o tipo da variável
+'2' === 2 -> Falso
+
+OPERADORES LÓGICOS
+
+AND:     &&
+OR:        ||
+NOT:      !
+
+shift + |
+
+cast -> Converter  
+
+$a = (int) "12";
+$a = (float) "3.12843824";
+$a =  (string) 34;
+
+ATRIBUÍÇÕES
+=, +=, -=, /=, *= e %=
+
+faz a atribuição + a operação que tiver 
+
+Operador ternário ( IF em uma linha ) 
+
+   echo 5 < 2 ? '5 é maior que 2': '5 é menor que 2 ?';
+   TOP, usar muito!!
+
+
+ESTRUTURAS DE CONTROLE
+
+if(expressao) {}  <- variáveis globais funcionam no bloco do if.
+
+if (exp) {
+} else {
+}
+
+
+IF ANINHADOS
+
+if (exp) {
+	if(exp){
+	}
+}
+
+
+else if
+
+if (exp) {
+} else if(exp {
+} else if(exp {
+} else if(exp {
+}
+
+
+SWITCH (ADICIONAIS BREAK E DEFAULT )
+
+case OK -> os próximos ficam certos também
+
+if é mais complicado de ler
+
+    switch($x){
+        case 0:
+            echo 'X é igual a 0.<br>';
+            break;
+        case 1:
+            echo 'X é igual a 1.<br>';
+            break;
+        default:
+            echo 'X não é igual a nenhum dos valores.<br>';
+    }
+
+
+
+ESTRUTURA DE REPETIÇÃO
+
+    $x  = 0;
+    while ($x < 10) {
+        $x += 1;
+        echo $x.'<br>';
+    }
+
+
+break -> Para sair de qualquer loop.
+
+
+LOOP ANINHADOS
+
+    $x  = 0;
+    while ($x < 10) {
+	$j = 0;
+	while($j < 2){
+             $j += 1;
+             echo $j.'<br>';
+         }
+        $x += 1;
+        echo $x.'<br>';
+    }
+
+
+continue -> Pula para o próximo passo do loop.
+
+
+do {
+} while (condicao);
+
+
+executa pelo menos uma vez
+
+
+FOR
+for(Contador; condição; incremento) {
+
+}
+
+    for($x=0; $x<=2;$x++){
+        echo $x.'<br>';
+    }
+
+Cuidado com o loop infinito é um erro que precisa ser corrigido while (true) sem break
+
+Foreach -> Orientada para array
+
+foreach($array as $item){
+codigo
+
+    $lista = [1, 2, 3, 4];
+    foreach($lista as $item){
+        echo $item.'<br>';
+    }
+
+
+INCLUSÃO DE CÓDIGO
+
+reaproveitamente de Código, arquivo header, arquivo footer, etc etc
+
+Include
+
+warning -> Se o arquivo não existir
+
+include "arquivo.etx";
+
+
+include adicionar o arquivo diretamente e suas funções, variáveis, etc. permitindo ser acessável pelo php
+
+require 
+
+Gera erro fatal se o arquivo não existir
+
+
+
+    include __DIR__."/../teste.php";  <- voltar pastas diretório atual
+
+include_once e require_once
+
+
+Só pode adicionar uma única vez ( inclusive no include mesmo, se já tiver 1 include, já não aparece o do once)
+
+
+Short tags precisará está ativa no servidor. 
+
+ <? echo "teste"; ?>
+
+usar sempre o normal  <?php echo "teste"; ?>
+
+arquivo php.ini na configuração do xampo( top )
+
+exibir conteúdo sem o echo
+
+<?= "teste";?> apenas exibir texto, mas vou usar o php e echo normal.
+
+Ser sólido.
+
+PHP e HTML
+
+.php ou .phtml ( híbrido com html ) - Precisa configurar o xampe
+
+FUNÇÕES
+
+Funções são nomes que executam determinação ação.
+
+    // função
+    function nome_funcao(){
+        echo 'Função';     
+    };
+
+
+chamar função também é chamado de Invocar
+
+Funções do PHP: strlen, strtoupper, strtolower, print_r, var_dump, etc...
+
+
+nome_funcao();
+
+função adicionar no top da tag do PHP, logo abaixo, boa prática.
+
+
+Param é um valor que será passado para pode ser manipulado pela função
+
+
+    // função
+    function nome_funcao($nome){
+        echo $nome;     
+    };
+
+    // função com retorno
+    function nome_funcao($nome){
+        return $nome;     
+    };
+
+
+Escolo Local, global, static
+
+
+
+
+    // função
+    function nome_funcao($nome){
+	global $b; <- evoca as variáveis de fora
+        return $nome;     
+    };
+
+
+static sobrevive depois
+
+
+Parâmetro Default
+
+
+
+    function nome_funcao($nome = "nome padrão"){
+        echo $nome;     
+    };
+
+
+
+default sempre a direita
+
+funções auxiliares 
+
+func_get_arg  <- trás os parâmetros 
+func_num_args <- número total de parãmetros
+
+// exercío contagem de vogais manual
+
+<?php
+    function countVowels($palavra){
+        $vogais = 'aeiou';
+        $palavra = strtolower($palavra);
+        $quantidade = 0;
+        
+        for ($i = 0; $i < strlen($palavra); $i++){
+            for ($j = 0; $j < strlen($vogais); $j++){
+                if ($vogais[$j] == $palavra[$i]){
+                    $quantidade++;
+                }
+            }
+        }
+        return $quantidade;    
+    } 
+    echo countVowels('arthur');
+?>
+
+
+function multiplos retornos, usa um Boolean para manipular os resultados finais
+-> basicamente, retornar uma lista com os resultados já manipulados/trtatods
+
+
+Depuração de valores
+
+print_r($lista); 
+
+var_dump($lista); -> retornar mais informações
+
+
+<?php
+    function sumDigits($num){
+        $soma =  0;
+        $num = abs($num);
+        
+        for($i=0; $i < strlen($num); $i++){
+            $soma += $num[$i];
+        }
+        return $soma;
+    }
+?>
+
+// Avançado em Strings lista associativa com foreach
+
+    $lista_de_carros = ["BYD DOPHIN" => 100000,  "BYD KING" => 200000, "TOYOTA HILUX" => 300000];
+
+
+    foreach($lista_de_carros as $carro => $preco){
+        if ($preco >= 150000){
+            echo "O carro $carro custa R\$ $preco <br>";
+        }
+    }
+
+    print('imprimindo algo');
+    printf(" %d %s", 1, 'oi');
+
+
+// percorrer string
+
+    $variavel = "arthur.php";
+    for ($i = 0; $i < strlen($variavel); $i++){
+        echo $variavel[$i]."\n";
+    }
+
+//; limpadores 
+
+    echo trim(" xx    x       ");
+    echo "\n";
+    echo ltrim(" xx    x       ");
+    echo "\n";
+    echo rtrim(" xx    x       ");
+
+    //  diminuir,aumentar
+
+    strtolower
+    strtoupper
+
+
+
+header("Content-type: text/plain"); // manipular o header
+
+
+
+strip_tags ( remover as tagas html)
+
+    $texto = 'Olá, sou o Arthur';
+    echo substr($texto, 12, 6);  // corta
+
+    $texto = ' sou o Arthur';
+    echo strrev($texto);  // inverte
+
+
+
+
+    $texto = ' sou o Arthur';
+    echo str_repeat($texto, 2);  // repete
+
+    $texto = ' sou o Arthur';
+    print_r( explode(" ", $texto));  // gerar array
+    print_r( implode(" ", $texto));  // gerar string com array
+
+
+    // encontrar a palavra 
+    echo "<br>";
+    $texto = ' sou o Arthur e estou curtindo bastante o PHP, estou aprendendo sobre o elevante azul e o \$';
+    print_r( strpos($texto, 'Arthur'));  
+    
+    // 1111 último
+    echo "<br>";
+    $texto = ' sou o Arthur e estou curtindo bastante o PHP, estou aprendendo sobre o elevante azul Arthur e o \$';
+    print_r( strrpos($texto, 'Arthur'));  
+
+    // comece de se existir
+    echo "<br>";
+    $texto = ' sou o Arthur e estou curtindo bastante o PHP, estou aprendendo sobre o elevante azul Arthur e o \$';
+    print_r( strstr($texto, 'estou'));  
+
+// decompor URL : separar ela em partes específicas 
+    echo "<br>";
+    $url = 'https://www.udemy.com';
+    $arrayurl = parse_url($url);
+    print_r($arrayurl);
+
+traz um array da url separado e organizado
+
+
+// arrays
+    $arr[1] = "teste"; adicionando index ou alterando valor;
+
+
+// atribiur valor em um novo index no finla 
+    $arr[] = 'ulitmo';
+
+
+
+// range para criar um array
+    $arr3 = range(0, 10);   range(0, 10, 2);  terceiro argumento = Pulo 
+
+    count($arr3); -> número de elementos do arrays;
+
+
+// matriz
+
+    $matriz2 = [
+        [1, 2],
+        [3, 4]
+    ];
+
+    // Pegar os valores da lista para uma variável
+
+    $pessoa = ['Arthur', 24, "desenvolvedor"];
+
+    list($nome, $idade, $profissao) = $pessoa;
+    echo $nome;
+
+
+// array_slice ( array, início, quanitdade de items para pegar) = retonra um array delimitado;
+
+    $pessoa = ['Arthur', 24, "desenvolvedor"];
+    $pessoa_nome_e_idade = array_slice($pessoa, 0, 2);
+        echo '<br>';
+          print_r($pessoa_nome_e_idade);
+
+//  array_chunk  ->  dividar array em arrays com base na quantidade de elementos;
+    $pessoa = ['Arthur', 24, "desenvolvedor", "endereço"];
+        echo '<br>';
+          print_r(array_chunk($pessoa, 1));  // R
+
+
+    // array associativos
+  //  array_keys -> retornar as chaves (array)
+  //  array_values -> retonar os valores (array)
+
+  $array_associativo = [
+    'marca' => 'bmw',
+    'motor' => 1.4,
+    'cor' => 'azul'
+  ];
+        echo '<br>';
+          print_r( array_keys($array_associativo));  // R
+        echo '<br>';
+          print_r( array_values($array_associativo));  // R
+
+
+
+// array_splice => remove array_splice($lista, 2, 1)  - Retornar e remove um array a partir do index 2, 1 elemento.
+
+      echo '<br>';
+          print_r( $array_associativo);  // R
+
+      echo '<br>';
+          print_r(array_splice($array_associativo, 2, 1));  // R
+
+
+/// extract +> Extrais variais da lista criando com base no nome  ( somente para arrays associativos, subscrevendo o nome da variável)
+
+  $array_associativo_2 = [
+    'marca' => 'bmw',
+    'motor' => 1.4,
+    'cor' => 'azul'
+  ];
+
+    echo '<br>';
+  extract($array_associativo_2);
+echo "$marca";
+
+
+/// compact -> cria um array a partir de variáveis 
+    $tipo_carro = '4x4';
+    $tipo_carro_cor =  'branco';
+    $tipo_carro_marca = 'toyota'; 
+   $carros = compact("tipo_carro","tipo_carro_cor","tipo_carro_marca");
+   print_r($carros);
+
+
+   // array_reduce -> array_reduce($lista, $funcao)  reduzir o array a um único
+  $lista = range(0, 10);
+
+  function soma($a, $b){
+    return $a + $b;
+  }
+  
+  $resultado = array_reduce($lista, "soma");
+
+  echo $resultado;
+
+// in_array("parametro", $lista) -> verifica se o item está na lista true e false
+
+
+    // orderna o array rsort(decrescente) e sort ( crescente)
+       echo '<br>';
+  rsort($lista);
+     echo '<br>';
+  print_r($lista);
+       echo '<br>';
+  sort($lista);
+     echo '<br>';
+  print_r($lista);
+
+  // coomo orderna arrays associativos 
+  asort ( $lista) - orderna pelo valor arsort
+  ksort( $lista ) - ordena pela chave  krsort
+
+  // array_reverse($array)  -> retonrar o arrey invertido
+  $lista = [ "Alexia" , "Arthur" , "Alec"];
+  echo '<br>';
+  print_r($lista);
+   $lista  = array_reverse($lista);
+  echo '<br>';
+  print_r($lista);
+
+
+// shuffle($lista) -> modifica a lista  e ordena de forma aleatória
+
+
+
+ $lista = [ "Alexia" , "Arthur" , "Alec"];
+   echo '<br>';
+  print_r($lista);
+  shuffle($lista);
+
+
+
+//  array_sum() // soma dos itens numéricos
+ $lista_num = [3 , 2 , 1];
+   echo '<br>';
+  echo array_sum($lista_num);  // 6 
+
+
+// merge arrays array_merge uni 2 ou mais arrays, apenas o RETORNO
+
+   echo '<br>';
+  print_r(array_merge( $lista ,  $lista_num));
+     echo '<br>';
+   print_r($lista);
+
+
+// ver a diferença entre 2 ou mais arrays
+// array_diff($array, $array2, etc ):
+
+Mostra o que no array 1 tem que não tem no array 2
+
+
+
+
+
+
+
