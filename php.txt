@@ -736,8 +736,55 @@ echo "$marca";
 Mostra o que no array 1 tem que não tem no array 2
 
 
+// classes
+
+    class Pessoa {
+        // propriedades
+        public $nome = 'Arthur';
+        protected $protegida = 'Só essa classe e as que fizerem extends';
+        private $privado = 'Só essa classe.';
+
+        public $profissao;
+        protected $profissao_2;
+        private $profissao_3;
+
+        
+        public const CHAVE_API = '123';
+
+        // métodos
+        function falar() {
+            echo "Olá, eu sou um objeto<br>";
+        }
+        private function somar($x, $y) {
+            echo  ($x+$y)."<br>";
+        }
+    }
 
 
 
+    // verificando henraça 
+    if ($Arthur instanceof Pessoa){
+        echo 'Tem herança com Pessoa: Sim';
+    } else {
+        echo 'Tem herança com Pessoa: Não';
+    }
 
+    // interface
+
+
+    // datas
+
+    // métodos que vão facilitar o trabalho com datas
+
+    $d = date("d/m/y"); //day/month/year
+    echo $d .'<br>';
+    $d = date("F j, Y, g:i a"); //day/month/year
+    echo $d ;
+
+// estudar a documentação do PHP!!!
+
+muitas formatações do tipo Data, e usar o objeto DateTime();
+
+// Fusiorário por padrão é Berlin > Europe/Berlin ( tomar cuidaod em projeto internacional)
+    date_default_timezone_set('America/Sao_Paulo');
 

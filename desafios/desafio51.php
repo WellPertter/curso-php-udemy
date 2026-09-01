@@ -1,4 +1,5 @@
 <?php
+
   $lista = [ "Alexia" => 200, "Arthur" => 1000, "Alec" => 300];
 
   
