@@ -788,3 +788,154 @@ muitas formatações do tipo Data, e usar o objeto DateTime();
 // Fusiorário por padrão é Berlin > Europe/Berlin ( tomar cuidaod em projeto internacional)
     date_default_timezone_set('America/Sao_Paulo');
 
+
+
+/// 14 - PHP E A WEB ( metade da montanha )
+
+nem todas linguagens tem adaptação para web, o php tem.
+
+HTTP 
+
+
+web roda em cima da HTTP -> Hypertext Transfer Protocol
+
+HTTP (HTTP/1.x)
+
+
+Buscar site é GET -> HTTP ou HTTPS   (Request) ( Header/body)
+
+                                     (Response) ( Header/body)
+
+arquivo/path 
+
+métodos ( VERBOS HTTP )
+GET -> SOLICITAÇÃO APARESENTAÇÃO DE UM RECURSO
+POST -> ENVIA DADOS AO SERVIDOR
+
+( NORMALMENTE COM API )
+PUT -> ATUALIZAÇÃO DE DADOS
+DELETE -> REMOÇÃO DE DADOS
+PATCH -> ATUALIZAR DE DADOS ESPECÍFICOS 
+
+variaveis globais
+
+$_ENV -> VARIVEIS DE AMBIENTE
+$_GET  -> PARÂMETROS DO GET
+$_POST  -> PARÂMETROS DO POST
+$_COOKIE -> INFORMAÇÕES DE COOKIE
+$_SERVER  -> INFORMAÇÕES DE SERVER
+$_FILES  -> INFORMAÇÕES DOS FILES
+
+
+$_SERVER:
+    SERVER_SOFTWARE -> Identificação do servidor
+    SERVER_NAME -> Hostname, DNS ou IP do servidor
+    SERVER_PROTOCOL -> Protocolo do Servidor
+    SERVER_PORT ->  Porta do servidor
+    QUERY_STRING  ->Argumentos após o ? na URL
+
+
+ // print_r($_SERVER);
+
+
+ // PROCESSAMENTO DE FORMULÁRIO
+GET -> Aparece na URL da requisição.
+POST -> Vai no body da requisição.
+
+// autoprocessamento de págians ( requisição e processamento na mesma página )
+$_SERVER['REQUEST_METHOD'] se é GET or POST ai faz o tratamento
+
+
+body
+    <?php
+        if ($metod == 'GET'):
+    ?>
+    <form action="index.php" method="post">
+    </form>
+
+    <?php
+        else:
+    ?>
+    <form action="index.php" method="get">
+    </form>
+    <?php
+        endif;  <- PRECISA DISSO PARA FINALIZAR
+    ?>
+
+MISTURAR PHP E HMTL E CSS 
+
+
+
+   $usuario = [
+        'nome' => 'José Arthur',
+        'idade' => '24',
+        'profissão' => 'Desenvolvedor'
+    ];
+
+    if ($usuario) {
+        $nome = $usuario['nome'];  
+        $idade = $usuario['idade'];  
+        $profissao = $usuario['profissão'];  
+    }
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="">
+        <input type="text" name="nome" value="<?= $nome ?>" planceholder="Digite seu nome"> <br>
+        <input type="text" name="idade" value="<?= $idade ?>" planceholder="Digite sua idade"><br>
+        <input type="text" name="profissao" value="<?= $profissao ?>" planceholder="Digite sua profissão"><br>
+    </form>
+</body>
+</html>
+
+
+
+
+
+        <input type="checkbox" name="igredientes[]" value="tomate" > tomate<br>  ARRAY NO HTML E PHP []
+
+
+
+Arquivos
+
+
+enctype = multipart/form-data
+$_FILES
+
+    
+    <form action="index.php" method="post" enctype="multipart/form-data">
+        <input type="file" name="arquivo" > <br>
+        <input type="submit" value="Enviar"><br>
+    </form>
+
+
+
+// setcokies
+
+definir isso antes do header
+
+setcokies 
+$_COOKIE
+    setcookie("nome", "Arthur", 3600);   nome, valor tempo(ms)
+
+
+        setcookie("nome", "Arthur", time() + 3600);
+
+    if (isset($_COOKIE["nome"])){
+        $nome = $_COOKIE["nome"];
+    }
+
+// session são coisas sérias que não podem falhar, se cokies bloqueado, é propagado na URL
+utilizado para autenticação, carrinho de compra, etc
+
+    session_start();
+
+    print_r($_SESSION);
