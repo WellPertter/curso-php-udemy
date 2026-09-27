@@ -939,3 +939,119 @@ utilizado para autenticação, carrinho de compra, etc
     session_start();
 
     print_r($_SESSION);
+
+
+
+
+16 PHP MYSQL
+
+compatibilidade com mais de 20 bancos de dados, relacional e não relacional.
+
+
+PDO (PHP Data Objects), mysqli
+
+MySQL é uma extensão antiga e descontinuada do PHP para conectar ao banco de dados, enquanto MySQLi (MySQL Improved) 
+
+SQL
+
+CREATE DATABASE cursophp;
+
+DROP DATABASE cursophp;
+
+use cursophp
+
+CREATE TABLE pessoas(
+	nome VARCHAR(250),
+	idade INT
+);
+
+DROP TABLE pessoas;
+
+ALTER TABLE pessoas
+ADD/DROP COLUMN/MODIFY COLUMN nome CONSTRAINT;
+
+CONSTRAINTS
+  NOT NULL
+  DEFAULT NULL
+  DEFAULT "..."
+  UNIQUE
+  NOT UNIQUE
+  PRIMIRY KEY 
+  UNSIGNED        -> NÃO PODE NÚLO
+  AUTO_INCREMENT 
+
+
+
+BANCO É REGRAS ADICIONAIS DE SEGURANÇA.
+
+
+INSERT INTO pessoas (nome) VALUES ("Luiz")
+
+
+ALTER TABLE pessoas
+DROP INDEX nome;
+
+
+principais tipos de dados
+
+
+Mais específico for mais rápido será as consultas.
+VARCHAR   0 a 65535 caracteres
+TEXT      máxio de 65535 bytes
+INT       número inteiros
+BIGINT    número inteiros com maior proporção 
+DATE      YYYY-MM-DD
+
+
+SELECT * FROM pessoas WHERE nome = 'X'
+AND, OR, NOT
+
+
+ORDER BY nome ASC/DESC 
+
+
+UPDATE pessoas SET nome = "Y" WHERE nome = "X"
+
+DELETE FROM pessoas WHERE nome = "X" 
+
+CREATE USER 'usuariio'@'localhost' IDENTIFIED BY 'usuariio';
+
+GRANT ALL PRIVILEGES ON *.* TO 'usuariio'@'localhost';
+
+FLUSH PRIVILEGES;
+
+
+SELECT * FROM mysql.user
+
+
+PDO -> é mais comum mas mais lento, porém vai abstrair mais e pode 
+ter maior compatibilidade.
+
+mysqli -> é mais próximo do código nativo SQL
+
+
+Conexão e teste de conexão
+    $host = "localhost";
+    $user = "";
+    $password = "";
+    $database = "cursophp";
+
+    $conn = new mysqli($host, $user, $password, $database);
+
+    if($conn->connect_errno){
+        echo "erro na conexão";
+        echo "erro: ". mysqli_connect_error();
+    }
+
+Warning -> desabilita para não mostrar informações sensíveis.
+
+
+
+? -> mysqli
+:ida -> PDO
+
+
+php_pdo
+php_pdo_mysql 
+
+as vezes tem que ir habilitar
