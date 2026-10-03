@@ -1055,3 +1055,25 @@ php_pdo
 php_pdo_mysql 
 
 as vezes tem que ir habilitar
+
+
+
+Design Patterns
+
+DAO -> Data access Object
+Padrão para persistência de dados.
+pode-se usar vários tipos de padrões
+
+Dados => Query
+
+Banco
+DAO
+Projeto
+
+UserDAO -> vai fazer o CRUD
+User  -> Ações que não envolve o banco 
+Create
+
+
+Extra: interface ( criar as regras do UserDAO)
+
